@@ -4,7 +4,7 @@ import { TodosContext } from "~/routes";
 import todoStyle from "./todo.css?inline";
 
 const Todo = component$(( { 
-        todo, 
+        todo,
         index, 
         toggleTodo, 
         removeTodo, 
@@ -13,14 +13,14 @@ const Todo = component$(( {
 } ) => {
     const ctx = useContext(TodosContext);
 
-    const todoName = useSignal(todo.name); // TODO: First do with "", then this way
+    const todoName = useSignal(todo.name);
     const updateMode = useSignal(false);
     const disabled = useSignal(false);
     const checkboxRef = useSignal(null);
 
-    useClientEffect$(({ track }) => { // TODO: Explain why useClientEffect$ instead of useTask$
+    useClientEffect$(({ track }) => {
         track(() => ctx.todos.length);
-        if (!todo.completed) { // TODO: Explain this a little aswell
+        if (!todo.completed) {
             checkboxRef.value.checked = false;
         }
     })
@@ -29,7 +29,7 @@ const Todo = component$(( {
     // I think this is because a re-render happens and the checkbox resets to being unchecked
     useClientEffect$(({ track }) => {
         track(() => updateMode.value)
-        if (todo.completed) { // TODO: Explain this a little aswell
+        if (todo.completed) {
             checkboxRef.value.checked = true;
         }
     })
