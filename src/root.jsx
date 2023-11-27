@@ -8,7 +8,6 @@ export default component$(() => {
   useStyles$(globalStyles)
 
   return (
-    // TODO: What is this component below?
     <QwikCityProvider>
       <head>
         <title>Todos App</title>

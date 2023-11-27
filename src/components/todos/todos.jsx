@@ -47,8 +47,6 @@ const Todos = component$(() => {
             return name.length >= 3;
         }
     )
-    
-    // TODO: Save to LocalStorage?
 
     return (
         <>

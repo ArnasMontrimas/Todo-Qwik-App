@@ -21,7 +21,6 @@ const TodoForm = component$(( { addTodo, validateName } ) => {
         async (e) => {
             todo.name = e.target.value;
             
-            // TODO: Explain the async/await
             const validName = await validateName(e.target.value);
             if (validName) disabled.value = false;
             else disabled.value = true
@@ -30,7 +29,7 @@ const TodoForm = component$(( { addTodo, validateName } ) => {
 
     useStylesScoped$(styles);
     return (
-        <form> {/** TODO: Explain why enclose this in a form tag... */}
+        <form> {}
             <label htmlFor="todoName">Name</label>
             <input 
                 ref={inputRef}
@@ -43,7 +42,7 @@ const TodoForm = component$(( { addTodo, validateName } ) => {
                 value="Add Todo"
                 type="submit" 
                 onClick$={() => { 
-                    addTodo(todo, resetState) // TODO: Explain why use callback instead of doing it there
+                    addTodo(todo, resetState)
                     // resetState(); // Reset State
                 }}
                 disabled={disabled.value}

@@ -16,7 +16,7 @@ export default component$(() => {
     const todos = useStore({
         todos: []
     }, {
-        recursive: true // TODO: Explain how adding this will make everything work, 
+        recursive: true
         // do without at first and with
     });
 
