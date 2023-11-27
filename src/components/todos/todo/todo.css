@@ -1,0 +1,25 @@
+div {
+    background-color: indianred;
+    margin: 5px;
+    padding: 5px;
+}
+
+#container {
+    border-radius: 5px;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom: 1px solid black;
+}
+
+.done div, .done {
+    background-color: lightgreen;
+    text-decoration: line-through;
+}
+
+.button-container button:nth-child(1) {
+    margin-right: 10px
+}
